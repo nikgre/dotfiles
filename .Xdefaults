@@ -1,0 +1,4 @@
+urxvt.foreground:	#aaaaaa
+urxvt.background:	#000000
+urxvt.font:		xft:Source\ Code\ Pro\ for\ Powerline:pixelsize=12,xft:Powerlinesymbols
+urxvt.letterSpace: 	0
