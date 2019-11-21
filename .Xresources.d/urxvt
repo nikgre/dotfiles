@@ -1,0 +1,45 @@
+! urxvt config
+
+urxvt*internalBorder: 30
+urxvt*cursorBlink: 1
+urxvt*scrollBar: off
+
+! termbg and termfg defined in each theme
+!
+urxvt*background: termbg
+urxvt*foreground: termfg
+
+! Tewi Font
+!
+urxvt.letterSpace: 0
+urxvt.lineSpace: 2
+urxvt*font: xft:Tewi:size=8, \
+	    xft:Kochi Gothic:style=ja:size=8
+
+! Yuki Font
+!
+!urxvt.letterSpace: 0
+!urxvt.lineSpace: 2
+!urxvt*font: xft:yuki:size=10
+
+!Hack Font
+!
+!urxvt*font: xft:Hack:size=8
+!urxvt*font: --Hack-----------iso8859-
+!urxvt.letterSpace: -1
+
+! Use firefox for internets
+urxvt*perl-ext-common: default,matcher,selection-to-clipboard
+urxvt*url-launcher:    firefox
+urxvt*matcher.button:  3
+
+! Transparency
+!
+!urxvt*transparent: false
+!urxvt*shading: 14
+
+! Clipboard enable
+!
+URxvt.keysym.C-M-c: builtin-string:
+URxvt.keysym.C-M-v: builtin-string:
+

@@ -47,7 +47,7 @@ bindsym $mod+Return exec st
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -modi drun -show drun -show-icons
+bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -109,16 +109,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
+set $ws1 "1-  "
+set $ws2 "2-  "
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws9 "9-  "
+set $ws10 "10-  "
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -147,9 +147,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 #gaps
 #smart_gaps off
 gaps inner 7
-gaps outer 10
-
-border_radius 5
+gaps outer 12
 
 # border none
 
@@ -182,10 +180,9 @@ mode "resize" {
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
+        bindsym $mod+r mode "default" }
 
-#bindsym $mod+r mode "resize"
+bindsym $mod+r mode "resize"
 
 #simple resize
 bindsym $mod+z resize shrink width 10 px or 10 ppt
@@ -195,41 +192,29 @@ bindsym $mod+o resize grow width 10 px or 10 ppt
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-#bar {
-#	font pango:noto sans display 10
-#	status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
-#	position top
-#	mode dock
-#	modifier None
-#}
+bar {
+#        status_command i3status
+	font pango:noto sans display 10
+	status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
+	position top
+	mode dock
+	modifier None
+}
 
 #i3lock
 bindsym $mod+x exec ~/.config/lock-blur/lock.sh
 #bindsym
-bindsym $mod+F1 exec firefox &
-bindsym $mod+F9 exec thunderbird &
-bindsym $mod+F2 exec st ranger &
-bindsym $mod+F4 exec st spt &
-bindsym $mod+F3 exec st gtop &
-bindsym $mod+F8 exec steam &
-bindsym $mod+F10 exec discord &
-bindsym $mod+F12 exec notify-send 'F1 Firefox F2 ranger F3 gtop F4 spt F8 steam F9 thunderbird F10 discord'
+bindsym $mod+Shift+f exec firefox
+bindsym $mod+Shift+t exec thunderbird
+bindsym $mod+Shift+w exec st ranger
+bindsym $mod+Shift+s exec st spt
+bindsym $mod+Shift+g exec st gtop
+
 #autostart
 exec --no-startup-id ~/.screenlayout/normal.sh
 exec --no-startup-id nitrogen --restore
-exec_always --no-startup-id ~/.config/i3/Scripts/picom_launch.sh &
+exec --no-startup-id compton -b --config ~/.config/compton.conf
 exec --no-startup-id exec setxkbmap de
-exec_always --no-startup-id ~/.config/i3/Scripts/launch_polybar.sh
-exec --no-startup-id megasync &
-exec --no-startup-id pasystray &
-exec --no-startup-id dunst &
 
 #assignments
-for_window [title=".*"] border pixel 0
-for_window [title="Steam - News"] floating enable
-for_window [title="Friends List"] floating enable
-for_window [title="UNDERTALE"] floating enable
-assign [class="firefox"] 1
-assign [class="Steam"] 8
-assign [class="Thunderbird"] 9
-assign [class="discord"] 10
+#for_window [class=".*"] border pixel 0
