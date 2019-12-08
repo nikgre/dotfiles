@@ -216,10 +216,12 @@ bindsym $mod+F10 exec discord &
 bindsym $mod+F12 exec notify-send 'F1 Firefox F2 ranger F3 gtop F4 spt F8 steam F9 thunderbird F10 discord'
 #autostart
 exec --no-startup-id ~/.screenlayout/normal.sh
-exec --no-startup-id nitrogen --restore
+#exec --no-startup-id nitrogen --restore
+exec wal -R
 exec_always --no-startup-id ~/.config/i3/Scripts/picom_launch.sh &
 exec --no-startup-id exec setxkbmap de
 exec_always --no-startup-id ~/.config/i3/Scripts/launch_polybar.sh
+exec_always --no-startup-id numlockx on
 exec --no-startup-id megasync &
 exec --no-startup-id pasystray &
 exec --no-startup-id dunst &
@@ -227,8 +229,10 @@ exec --no-startup-id dunst &
 #assignments
 for_window [title=".*"] border pixel 0
 for_window [title="Steam - News"] floating enable
+for_window [title="Steam - Self Updater"] floating ebale
 for_window [title="Friends List"] floating enable
 for_window [title="UNDERTALE"] floating enable
+for_window [title="Nitrogen"] floating enable
 assign [class="firefox"] 1
 assign [class="Steam"] 8
 assign [class="Thunderbird"] 9

@@ -101,4 +101,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 
+. "${HOME}/.cache/wal/colors.sh"
+alias dmenu='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
+
 pfetch
+

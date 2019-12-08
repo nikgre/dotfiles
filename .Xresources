@@ -1,19 +1,6 @@
 ! Commented lines start with '!'
 
-! Import theme colors + rofi
-#include ".Xresources.d/themes/alley"
-!#include ".Xresources.d/themes/bridge"
-!#include ".Xresources.d/themes/cmyk"
-!#include ".Xresources.d/themes/donut"
-!#include ".Xresources.d/themes/floral"
-!#include ".Xresources.d/themes/grayscale"
-!#include ".Xresources.d/themes/kiss_shot"
-!#include ".Xresources.d/themes/senjou"
-!#include ".Xresources.d/themes/sky"
-!#include ".Xresources.d/themes/sunsetcity"
-!#include ".Xresources.d/themes/taiga"
-!#include ".Xresources.d/themes/touka"
-
+#include ".cache/wal/colors.Xresources"
 ! Some font rendering fixings
 Xft.dpi:        96
 Xft.rgba:       rgb

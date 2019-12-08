@@ -17,9 +17,9 @@
 *color14: #e0d8db
 *color15: #e0dadb
 
-#define termbg #191b20
-#define termfg #e0dadb
+!#define termbg #191b20
+!#define termfg #e0dadb
 
 ! import rofi
-#include "../rofi/floral.rofi"
+!#include "../rofi/floral.rofi"
 
